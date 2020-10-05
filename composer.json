@@ -28,6 +28,6 @@
 		"omnipay/tests": "^3"
 	},
 	
-	"minimum-stability": "stable",
+	"minimum-stability": "dev",
 	"prefer-stable": true
 }
