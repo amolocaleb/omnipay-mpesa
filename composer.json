@@ -1,5 +1,5 @@
 {
-    "name": "stephencoduor/omnipay-mpesa",
+    "name": "amolocaleb/omnipay-mpesa",
     "type": "library",
     "description": "Mpesa omnipay gateway",
     "keywords": [
