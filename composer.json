@@ -1,38 +1,37 @@
 {
-    "name": "amolocaleb/omnipay-mpesa",
-    "type": "library",
-    "description": "Mpesa omnipay gateway",
-    "keywords": [
-        "omnipay",
-        "mpesa",
-        "mpesa Stk"
-    ],
-    "homepage": "https://github.com/amolocaleb/omnipay-mpesa",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Caleb Amolo",
-            "email": "amolocaleb@gmail.com",
-            
-        }
-    ], 
-    "autoload": {
-        "psr-4": {
-            "Omnipay\\Mpesa\\": "src"
-        }
-    },
-   "require": {
-        "php": "^5.6|^7.1",
-        "omnipay/common": "^3"
-    },
-    "require-dev": {
-        "omnipay/tests": "^3"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "v1.5"
-        }
-    }
-    ,"minimum-stability": "-dev",
-     "prefer-stable": true
+	"name": "amolocaleb/omnipay-mpesa",
+	"type": "library",
+	"description": "Mpesa omnipay gateway",
+	"keywords": [
+		"omnipay",
+		"mpesa",
+		"mpesa Stk"
+	],
+	"homepage": "https://github.com/amolocaleb/omnipay-mpesa",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Caleb Amolo",
+			"email": "amolocaleb@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Omnipay\\Mpesa\\": "src"
+		}
+	},
+	"require": {
+		"php": "^5.6|^7.1",
+		"omnipay/common": "^3"
+	},
+	"require-dev": {
+		"omnipay/tests": "^3"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "v1.5"
+		}
+	},
+	"minimum-stability": "-dev",
+	"prefer-stable": true
 }
