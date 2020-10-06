@@ -19,18 +19,23 @@ class MpesaTokenRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $body = $data ? http_build_query($data, '', '&') : null;
-        $httpResponse = $this->httpClient->request(
-            'GET',
+		$body = $data ? http_build_query($data, '', '&') : null;
+		// dd($this->httpClient);
+        $httpResponse = $this->httpClient->get(
+            
             $this->getEndpoint(),
             array(
                 'Accept' => 'application/json',
                 'Authorization' => 'Basic ' . base64_encode("{$this->getConsumerKey()}:{$this->getConsumerSecret()}"),
             ),
-            ''
-        );
-        // Empty response body should be parsed also as and empty array
-        $body = (string) $httpResponse->getBody()->getContents();
+            
+        )->send();
+		// Empty response body should be parsed also as and empty array
+		// dd($httpResponse);
+		// echo "<pre>";
+		// var_dump($httpResponse);
+		// die();
+        $body = (string) $httpResponse->getBody();
         $jsonToArrayResponse = !empty($body) ? json_decode($body, true) : array();
         return $this->response = new MpesaResponse($this, $jsonToArrayResponse, $httpResponse->getStatusCode());
     }

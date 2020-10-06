@@ -20,9 +20,21 @@ class Gateway extends AbstractGateway
             'shortcode' => '',
             'consumer_key' => '',
             'consumer_secret' => '',
-            'token' => '',
+			'token',
+			'callbackUrl' => '',
+			// 'resultUrl' => '',
             'testMode' => false,
         );
+	}
+	
+	public function getCallbackUrl()
+    {
+        return $this->getParameter('callbackUrl');
+    }
+
+    public function setCallbackUrl($value)
+    {
+        return $this->setParameter('callbackUrl', $value);
     }
     
     public function getShortCode()

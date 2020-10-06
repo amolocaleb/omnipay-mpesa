@@ -133,8 +133,8 @@ abstract class AbstractRequest extends BaseAbstractRequest
         // echo "Data == " . json_encode($data) . "\n";
 
         try {
-            $httpResponse = $this->httpClient->request(
-                $this->getHttpMethod(),
+            $httpResponse = $this->httpClient->{strtolower($this->getHttpMethod())}(
+                // $this->getHttpMethod(),
                 $this->getEndpoint(),
                 array(
                     'Accept' => 'application/json',
@@ -144,7 +144,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
                 $body
             );
             // Empty response body should be parsed also as and empty array
-            $body = (string) $httpResponse->getBody()->getContents();
+            $body = (string) $httpResponse->getBody();
             $jsonToArrayResponse = !empty($body) ? json_decode($body, true) : array();
             return $this->response = $this->createResponse($jsonToArrayResponse, $httpResponse->getStatusCode());
         } catch (\Exception $e) {
